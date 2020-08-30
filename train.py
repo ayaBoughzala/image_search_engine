@@ -31,4 +31,4 @@ X_train, X_test, Y_train, Y_test = train_test_split(data, targets)
 model.compile(Adam(1e-4), triplet_loss)
 model.fit([X_train[:,0], X_train[:,1], X_train[:,2]], Y_train, epochs=10,
           validation_data=([X_test[:,0], X_test[:,1], X_test[:,2]], Y_test),
-          callbacks=[callback], batch_size=1)
+          callbacks=[callback], batch_size=32)
